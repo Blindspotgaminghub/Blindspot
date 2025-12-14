@@ -197,5 +197,29 @@
     <footer>
         &copy; 2025 BlindSpot Gaming Café. All Rights Reserved.
     </footer>
+      <!-- Background Music -->
+    <audio id="bg-music" autoplay loop>
+        <source src="music/videoplayback.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Toggle Button -->
+    <button id="music-toggle">Mute</button>
+
+    <script>
+        const music = document.getElementById('bg-music');
+        const toggleBtn = document.getElementById('music-toggle');
+
+        toggleBtn.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                toggleBtn.textContent = 'Mute';
+            } else {
+                music.pause();
+                toggleBtn.textContent = 'Unmute';
+            }
+        });
+    </script>
 </body>
 </html>
+
